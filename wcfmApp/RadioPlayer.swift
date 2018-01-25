@@ -56,9 +56,6 @@ class RadioPlayer : NSObject {
         
         try! self.audioSession.setCategory(AVAudioSessionCategoryPlayback)
         try! self.audioSession.setActive(true)
-        
-        //self.configureCommandCenter()
-        //self.setUpNowPlayingInfoCenter()
     }
     
     func play() {
