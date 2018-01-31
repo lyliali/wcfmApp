@@ -57,12 +57,12 @@ class ViewController: UIViewController {
     
     private func doPlayAction() {
         player!.play()
-        playButton.setImage(UIImage(named:"pause.png"), for:UIControlState.normal)
+        playButton.setImage(UIImage(named:"pause_button copy_r.png"), for:UIControlState.normal)
     }
     
     private func doPauseAction() {
         player!.pause()
-        playButton.setImage(UIImage(named:"play.png"), for:UIControlState.normal)
+        playButton.setImage(UIImage(named:"play_button copy_r.png"), for:UIControlState.normal)
     }
     
     @IBAction func playPauseButton(_ sender: AnyObject) {

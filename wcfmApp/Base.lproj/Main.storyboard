@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,33 +14,35 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="wcfmApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTt-Up-S9J">
-                                <rect key="frame" x="16" y="20" width="333" height="128"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cropped-wcfm-91.9-Recovered2.png" translatesAutoresizingMaskIntoConstraints="NO" id="75W-Hz-Kol">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-mI-Zfj">
-                                        <rect key="frame" x="151" y="55" width="31" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Play" image="play.png"/>
-                                        <connections>
-                                            <action selector="playPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4g-nG-Bbq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAQ-Rd-Vsb">
-                                <rect key="frame" x="132" y="156" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Skip to Realtime"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wcfm(1)_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="AGH-G0-lUb">
+                                <rect key="frame" x="12" y="158" width="350" height="371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AGH-G0-lUb" secondAttribute="height" multiplier="50:53" id="OzU-ok-maE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-mI-Zfj">
+                                <rect key="frame" x="53" y="318" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ICW-mI-Zfj" secondAttribute="height" multiplier="1:1" id="9JT-Kv-yoV"/>
+                                    <constraint firstAttribute="height" constant="50" id="eBY-9I-jN3"/>
+                                </constraints>
+                                <state key="normal" image="play_button copy_r.png"/>
+                                <connections>
+                                    <action selector="playPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4g-nG-Bbq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAQ-Rd-Vsb">
+                                <rect key="frame" x="275" y="318" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tAQ-Rd-Vsb" secondAttribute="height" multiplier="1:1" id="txc-P5-OBY"/>
+                                </constraints>
+                                <state key="normal" image="replay copy_r.png"/>
                                 <connections>
                                     <action selector="resetPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XlS-GB-o5K"/>
                                 </connections>
@@ -48,10 +50,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yTt-Up-S9J" secondAttribute="bottom" constant="519" id="1qJ-a2-sPG"/>
-                            <constraint firstItem="yTt-Up-S9J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6Cl-Zy-Sh9"/>
-                            <constraint firstItem="yTt-Up-S9J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AKn-Qk-Sie"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTt-Up-S9J" secondAttribute="trailing" constant="26" id="M4c-bO-tqe"/>
+                            <constraint firstItem="tAQ-Rd-Vsb" firstAttribute="centerY" secondItem="AGH-G0-lUb" secondAttribute="centerY" id="02l-VA-n4Y"/>
+                            <constraint firstItem="ICW-mI-Zfj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2hm-iC-iXf"/>
+                            <constraint firstItem="tAQ-Rd-Vsb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="A6Q-j4-p5K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tAQ-Rd-Vsb" secondAttribute="trailing" constant="50" id="DKo-Z0-NCa"/>
+                            <constraint firstItem="AGH-G0-lUb" firstAttribute="top" secondItem="ICW-mI-Zfj" secondAttribute="bottom" constant="-210" id="dRX-82-QUL"/>
+                            <constraint firstItem="AGH-G0-lUb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="m57-8x-m6I"/>
+                            <constraint firstItem="AGH-G0-lUb" firstAttribute="top" secondItem="tAQ-Rd-Vsb" secondAttribute="bottom" constant="-210" id="nmH-Z1-fa7"/>
+                            <constraint firstItem="AGH-G0-lUb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="oiy-Iy-w7b"/>
+                            <constraint firstItem="ICW-mI-Zfj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="z17-Mb-M9X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -59,13 +66,13 @@
                         <outlet property="playButton" destination="ICW-mI-Zfj" id="wDa-fK-ncl"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="92" y="33.733133433283363"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cropped-wcfm-91.9-Recovered2.png" width="990" height="380"/>
-        <image name="play.png" width="127" height="141"/>
+        <image name="play_button copy_r.png" width="65" height="79"/>
+        <image name="replay copy_r.png" width="65" height="68"/>
+        <image name="wcfm(1)_r.png" width="350" height="350"/>
     </resources>
 </document>
